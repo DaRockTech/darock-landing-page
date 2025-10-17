@@ -87,7 +87,7 @@
         <!-- Header & Navigation --><header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <div class="flex items-center space-x-2">
-                    <img src="LogoDaRockTech.png" alt="DaRock Technologies Logo" class="h-10 w-10 rounded-lg">
+                    <img src="LogoDaRockTech.jpg" alt="DaRock Technologies Logo" class="h-10 w-10 rounded-lg">
                     <span class="text-xl font-bold text-white">DaRock Technologies</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
@@ -115,7 +115,7 @@
             <!-- Hero Section --><section id="home" class="min-h-screen flex items-center justify-center text-center relative pt-20 overflow-hidden">
                 <!-- Removed aurora-bg div --><div class="container mx-auto px-6 z-10">
                     <div class="max-w-md mx-auto mb-8">
-                        <img src="LogoDaRockTech.png" alt="DaRock Technologies, LLC Logo" class="w-full h-auto rounded-3xl glow-effect">
+                        <img src="LogoDaRockTech.jpg" alt="DaRock Technologies, LLC Logo" class="w-full h-auto rounded-3xl glow-effect">
                     </div>
                     <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4 reveal">
                         Engineering The <span class="gradient-text">Future</span>, Today.
@@ -223,7 +223,7 @@
         
         <!-- Footer --><footer class="bg-gray-900/50 border-t border-cyan-500/10 py-8">
             <div class="container mx-auto px-6 text-center text-gray-400">
-                <img src="LogoDaRockTech.png" alt="DaRock Small Logo" class="h-12 w-12 rounded-lg mx-auto mb-4">
+                <img src="LogoDaRockTech.jpg" alt="DaRock Small Logo" class="h-12 w-12 rounded-lg mx-auto mb-4">
                 <p>&copy; 2025 DaRock Technologies, LLC. All Rights Reserved.</p>
                 <p class="text-sm mt-2">Pioneering Tomorrow's Technology.</p>
             </div>
@@ -264,17 +264,21 @@
         // --- Mobile Menu Toggle ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
         
         // --- Close mobile menu on link click ---
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        if (mobileMenu) {
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
             });
-        });
+        }
 
         // --- Reveal on Scroll ---
         const revealElements = document.querySelectorAll('.reveal');

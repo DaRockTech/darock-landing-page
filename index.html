@@ -226,6 +226,19 @@
                 <img src="LogoDaRockTech.jpg" alt="DaRock Small Logo" class="h-12 w-12 rounded-lg mx-auto mb-4">
                 <p>&copy; 2025 DaRock Technologies, LLC. All Rights Reserved.</p>
                 <p class="text-sm mt-2">Pioneering Tomorrow's Technology.</p>
+                <button id="data-policy-button" class="mt-4 bg-cyan-500 text-white py-2 px-4 rounded hover:bg-cyan-600 transition">Data Policy</button>
+                <div id="data-policy-dropdown" class="hidden mt-4 p-4 bg-gray-800 rounded text-left text-gray-300 max-w-md mx-auto">
+                    <h3 class="text-lg font-bold text-cyan-300 mb-2">Privacy & Data Protection Policy</h3>
+                    <p class="mb-3">Your privacy is our top priority. We are committed to protecting your personal information with the highest standards of security and transparency.</p>
+                    <h4 class="text-md font-semibold text-cyan-200 mb-1">Data Ownership</h4>
+                    <p class="mb-3">You retain full ownership and control of your data. We do not — and will never — sell, rent, or share your personal information with any third party for marketing or commercial purposes.</p>
+                    <h4 class="text-md font-semibold text-cyan-200 mb-1">Data Storage and Security</h4>
+                    <p class="mb-3">All user data is encrypted both in transit and at rest using industry-standard encryption technologies. Your data is stored in a way that only you can access it — not even our internal teams can view or decrypt your information.</p>
+                    <h4 class="text-md font-semibold text-cyan-200 mb-1">Access Control</h4>
+                    <p class="mb-3">Access to your data is strictly limited to you and authorized systems acting on your behalf. We employ zero-knowledge encryption wherever applicable, ensuring that even our infrastructure providers cannot read or interpret your stored content.</p>
+                    <h4 class="text-md font-semibold text-cyan-200 mb-1">Your Trust, Our Promise</h4>
+                    <p>We believe privacy is a right, not a feature. Our systems are designed with privacy by default — so your information remains confidential, secure, and under your control at all times.</p>
+                </div>
             </div>
         </footer>
 
@@ -295,6 +308,15 @@
         revealElements.forEach(element => {
             revealObserver.observe(element);
         });
+
+        // --- Data Policy Dropdown ---
+        const dataPolicyButton = document.getElementById('data-policy-button');
+        const dataPolicyDropdown = document.getElementById('data-policy-dropdown');
+        if (dataPolicyButton && dataPolicyDropdown) {
+            dataPolicyButton.addEventListener('click', () => {
+                dataPolicyDropdown.classList.toggle('hidden');
+            });
+        }
     </script>
 </body>
 </html>
